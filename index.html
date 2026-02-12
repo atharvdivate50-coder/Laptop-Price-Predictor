@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Price Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+            outline: none;
+        }
+
+        button {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #574fd6;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        @media screen and (max-width: 400px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Laptop Price Prediction</h2>
+
+        <form id="laptopForm" action="/predict" method="post">
+            <label for="Brand">Brand:</label>
+            <select name="brand" id="Brand" required>
+                <option value="">Select Brand</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Asus">Asus</option>
+                <option value="Acer">Acer</option>
+                <option value="Apple">Apple</option>
+            </select>
+
+            <label>Processor Brand:</label>
+            <select name="processor_brand" id="processorBrand" required>
+                <option value="">Select Processor Brand</option>
+                <option value="Intel">Intel</option>
+                <option value="AMD">AMD</option>
+                <option value="Apple">Apple</option>
+            </select>
+
+            <label>Processor Series:</label>
+            <select name="processor_series" id="processorSeries" required>
+                <option value="">Select Processor Series</option>
+            </select>
+
+            <label>Screen Size (Inches):</label>
+            <select name="screen_size_inches" required>
+                <option value="">Select Screen Size</option>
+                <option value="13.3">13.3</option>
+                <option value="13.6">13.6</option>
+                <option value="14.0">14.0</option>
+                <option value="15.3">15.3</option>
+                <option value="15.6">15.6</option>
+                <option value="16.0">16.0</option>
+                <option value="16.1">16.1</option>
+            </select>
+
+            <label>RAM (GB):</label>
+            <select name="ram_gb" required>
+                <option value="">Select RAM</option>
+                <option value="8">8</option>
+                <option value="16">16</option>
+                <option value="24">24</option>
+                <option value="32">32</option>
+                <option value="36">36</option>
+            </select>
+
+            <label>SSD (GB):</label>
+            <select name="ssd_gb" required>
+                <option value="">Select SSD</option>
+                <option value="256">256</option>
+                <option value="512">512</option>
+                <option value="1024">1024</option>
+                <option value="2048">2048</option>
+            </select>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <h3 id="predictionText">{{ prediction_text }}</h3>
+    </div>
+
+    <script>
+        // Define processor series options by brand
+        const processorOptions = {
+            "Intel": ["i3", "i5", "i7", "i9", "Core Ultra 5", "Core Ultra 7", "Core Ultra 9"],
+            "AMD": ["Ryzen 3", "Ryzen 5", "Ryzen 7", "Ryzen 9", "Ryzen AI 5", "Ryzen AI 7"],
+            "Apple": ["M1", "M2", "M3", "M4", "M4 Pro", "M4 Max"]
+        };
+
+        const processorBrand = document.getElementById('processorBrand');
+        const processorSeries = document.getElementById('processorSeries');
+
+        // Update processor series when brand changes
+        processorBrand.addEventListener('change', function () {
+            const brand = this.value;
+            // Clear previous options
+            processorSeries.innerHTML = '<option value="">Select Processor Series</option>';
+
+            if (brand && processorOptions[brand]) {
+                processorOptions[brand].forEach(series => {
+                    const option = document.createElement('option');
+                    option.value = series;
+                    option.textContent = series;
+                    processorSeries.appendChild(option);
+                });
+            }
+        });
+
+        // Optional: show loading effect on submit
+        const form = document.getElementById('laptopForm');
+        const predictionText = document.getElementById('predictionText');
+        form.addEventListener('submit', function (e) {
+            predictionText.textContent = "Predicting...";
+            predictionText.style.color = "#6c63ff";
+
+            setTimeout(() => {
+                predictionText.textContent = "{{ prediction_text }}";
+                predictionText.style.color = "#333";
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

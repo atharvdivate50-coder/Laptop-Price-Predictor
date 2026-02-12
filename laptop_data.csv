@@ -1,0 +1,52 @@
+brand,processor_brand,processor_series,screen_size_inches,ram_gb,ssd_gb,price_inr
+Dell,Intel,i3,15.6,8,256,36990
+Dell,Intel,i5,15.6,16,512,60990
+Dell,Intel,Core Ultra 5,16.0,16,512,81389
+Dell,Intel,Core Ultra 7,14.0,32,1024,131990
+Dell,AMD,Ryzen 3,15.6,8,512,32990
+Dell,AMD,Ryzen 5,15.6,16,512,58260
+Dell,AMD,Ryzen 7,14.0,16,512,71900
+HP,Intel,i3,14.0,8,512,34400
+HP,Intel,i5,15.6,16,512,58990
+HP,Intel,Core Ultra 7,14.0,16,1024,112000
+HP,Intel,i9,16.0,32,1024,189999
+HP,AMD,Ryzen 3,15.6,8,512,34990
+HP,AMD,Ryzen 5,15.6,16,512,45999
+HP,AMD,Ryzen 7,16.1,16,512,57490
+HP,AMD,Ryzen AI 5,13.3,16,512,76490
+HP,AMD,Ryzen AI 7,13.3,16,512,85490
+Lenovo,Intel,i3,14.0,8,512,42499
+Lenovo,Intel,i5,15.6,16,512,54990
+Lenovo,Intel,i7,15.6,16,512,69890
+Lenovo,Intel,Core Ultra 5,14.0,16,1024,92990
+Lenovo,AMD,Ryzen 3,15.6,8,512,42190
+Lenovo,AMD,Ryzen 5,15.6,16,512,47900
+Lenovo,AMD,Ryzen 5,15.6,24,512,64990
+Lenovo,AMD,Ryzen 7,15.6,16,512,92490
+Asus,Intel,i5,14.0,16,512,63990
+Asus,Intel,Core Ultra 5,14.0,16,512,67990
+Asus,Intel,Core Ultra 7,14.0,16,1024,90220
+Asus,AMD,Ryzen 3,14.0,8,512,30990
+Asus,AMD,Ryzen 5,15.6,16,512,55990
+Asus,AMD,Ryzen AI 7,14.0,16,512,74890
+Asus,AMD,Ryzen 9,14.0,32,1024,115990
+Asus,AMD,Ryzen 9,16.0,32,1024,239990
+Acer,Intel,i3,15.6,8,512,34990
+Acer,Intel,i5,14.0,16,512,41990
+Acer,Intel,i7,15.6,16,512,61999
+Acer,Intel,Core Ultra 5,14.0,16,512,54990
+Acer,Intel,Core Ultra 7,14.0,16,1024,84499
+Acer,Intel,Core Ultra 9,16.0,32,2048,229990
+Acer,AMD,Ryzen 5,14.0,16,512,39990
+Acer,AMD,Ryzen 5,15.6,16,1024,46990
+Acer,AMD,Ryzen 7,16.0,16,1024,154990
+Apple,Apple,M1,13.3,8,256,54990
+Apple,Apple,M2,13.6,8,256,69990
+Apple,Apple,M3,13.6,16,256,104900
+Apple,Apple,M4,13.6,16,256,92199
+Apple,Apple,M4,15.3,16,512,116900
+Apple,Apple,M4 Pro,14.0,24,512,191990
+Apple,Apple,M4 Max,14.0,32,1024,289990
+Apple,Apple,M4 Max,16.0,36,1024,334990
+Samsung,Intel,Core Ultra 5,16.0,16,512,54989
+Motorola,Intel,Core Ultra 5,14.0,16,1024,110490
